@@ -826,6 +826,313 @@ a:focus-visible, button:focus-visible {
     transform: none !important;
   }
 }
+
+/* ==================================================
+   COMUNICADO OFICIAL & SMART RIO PRETO (Texto na Íntegra)
+   ================================================== */
+.comunicado-section {
+  position: relative;
+  background: linear-gradient(180deg, #071326 0%, #0A1B35 50%, #060F1E 100%);
+  padding: 90px 0 100px;
+  border-top: 1px solid var(--border-glass);
+  border-bottom: 1px solid var(--border-glass);
+  color: #FFFFFF;
+}
+
+.comunicado-header {
+  margin-bottom: 45px;
+}
+
+.comunicado-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(127, 230, 223, 0.08);
+  border: 1px solid rgba(127, 230, 223, 0.28);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  margin-bottom: 16px;
+}
+
+.badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--teal-bright);
+  box-shadow: 0 0 8px var(--teal-bright);
+}
+
+.comunicado-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.2vw, 2.6rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+  max-width: 980px;
+}
+
+.comunicado-dateline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--teal-bright);
+}
+.comunicado-dateline svg {
+  width: 16px;
+  height: 16px;
+}
+
+.comunicado-main-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 960px) {
+  .comunicado-main-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.comunicado-copy p {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #CBD5E1;
+  margin-bottom: 20px;
+}
+.comunicado-copy p:last-child {
+  margin-bottom: 0;
+}
+.comunicado-copy .lead-p {
+  font-size: 1.12rem;
+  color: #F1F5F9;
+}
+.comunicado-copy strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.text-phone-link {
+  color: var(--teal-bright);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+.text-phone-link:hover {
+  color: #FFFFFF;
+}
+
+.comunicado-media-wrap .video-card {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--border-glass);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.5);
+  background-color: var(--navy-dark);
+}
+
+.comunicado-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.95) contrast(1.05);
+}
+
+.video-overlay-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  right: 14px;
+  background: rgba(6, 15, 30, 0.82);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--border-glass);
+  border-radius: 12px;
+  padding: 8px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--teal-bright);
+  box-shadow: 0 0 10px var(--teal-bright);
+}
+
+/* SMART STATS */
+.smart-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+  .smart-stats-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.smart-stat-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-glass);
+  border-radius: 18px;
+  padding: 24px 26px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+.smart-stat-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(127, 230, 223, 0.4);
+}
+
+.stat-number {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--teal-bright);
+  line-height: 1.1;
+  margin-bottom: 6px;
+}
+
+.stat-title {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-bottom: 6px;
+}
+
+.stat-desc {
+  font-size: 0.86rem;
+  color: var(--ink-light);
+  line-height: 1.5;
+}
+
+/* GUIA 0800 */
+.atendimento-guide-box {
+  background: rgba(10, 24, 47, 0.7);
+  border: 1px solid rgba(127, 230, 223, 0.25);
+  border-radius: 20px;
+  padding: 32px 36px;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+
+@media (max-width: 640px) {
+  .atendimento-guide-box {
+    padding: 24px 20px;
+  }
+}
+
+.guide-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal-bright);
+  margin-bottom: 24px;
+}
+.guide-title svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.guide-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border-glass);
+}
+
+@media (max-width: 768px) {
+  .guide-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.guide-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.guide-icon {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background: rgba(127, 230, 223, 0.1);
+  border: 1px solid rgba(127, 230, 223, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal-bright);
+}
+.guide-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.guide-txt strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+.guide-txt p {
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: #CBD5E1;
+}
+.guide-txt a {
+  color: var(--teal-bright);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.comunicado-closure p {
+  font-size: 0.98rem;
+  line-height: 1.65;
+  color: #E2E8F0;
+}
+.comunicado-closure a {
+  color: var(--teal-bright);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 </style>
 </head>
 <body>
@@ -870,7 +1177,7 @@ a:focus-visible, button:focus-visible {
         poster="assets/hero-poster.jpg"
         aria-label="Vídeo da operação real de iluminação pública da CRP Luz em São José do Rio Preto"
       >
-        <source src="assets/hero_crpluz.mp4?v=crpluz" type="video/mp4" />
+        <source src="assets/hero_crpluz.mp4?v=1080p" type="video/mp4" />
       </video>
     </div>
     
@@ -927,6 +1234,122 @@ a:focus-visible, button:focus-visible {
         </a>
 
       </div>
+    </div>
+  </section>
+
+  <!-- ==================================================
+       COMUNICADO OFICIAL: TEXTO NA ÍNTEGRA & VÍDEO SMART RIO PRETO
+       ================================================== -->
+  <section class="comunicado-section" id="comunicado" aria-label="Comunicado Oficial da CRP Luz">
+    <div class="wrap">
+      
+      <div class="comunicado-header">
+        <div class="comunicado-badge">
+          <span class="badge-dot"></span>
+          Comunicado Oficial • Smart Rio Preto
+        </div>
+        <h2 class="comunicado-title">CRP Luz reforça compromisso com São José do Rio Preto e disponibiliza 0800 exclusivo</h2>
+        <p class="comunicado-dateline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          São José do Rio Preto, setembro de 2026
+        </p>
+      </div>
+
+      <div class="comunicado-main-grid">
+        <div class="comunicado-copy">
+          <p class="lead-p">
+            A <strong>CRP Luz</strong> é a concessionária responsável por executar o <strong>Smart Rio Preto</strong>, projeto que moderniza a infraestrutura urbana do município em direção a um modelo mais inteligente, seguro e conectado. É a equipe da CRP Luz que está realizando a substituição das luminárias antigas da cidade por novas unidades de LED, garantindo maior eficiência energética, claridade e segurança para ruas, avenidas e praças.
+          </p>
+
+          <p>
+            Para estreitar o relacionamento com a comunidade, a CRP Luz disponibiliza um canal de atendimento exclusivo e gratuito pelo telefone <a href="tel:08009214477" class="text-phone-link">0800 921 4477</a>, voltado a esclarecer dúvidas, ouvir sugestões e prestar suporte à população.
+          </p>
+
+          <p>
+            Além da modernização da iluminação pública, a iniciativa integra segurança e mobilidade urbana por meio de uma plataforma unificada. O projeto prevê a melhoria do tráfego e da segurança nos próximos três anos com a modernização de <strong>309 semáforos</strong>. No primeiro ano de execução, serão instalados <strong>40 novos equipamentos</strong> e renovados <strong>92 pontos existentes</strong> para otimizar o fluxo de veículos. A iniciativa também inclui a instalação de <strong>3 mil câmeras</strong> com inteligência artificial, equipadas com tecnologia de leitura automática de placas (OCR) e mapeamento facial, além do cruzamento de dados para o monitoramento estratégico da cidade.
+          </p>
+        </div>
+
+        <!-- Vídeo 2: Avenida Urbana Iluminada em 1080p -->
+        <div class="comunicado-media-wrap">
+          <div class="video-card">
+            <video
+              class="comunicado-video"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              poster="assets/slide-1.jpg"
+              aria-label="Vídeo da avenida iluminada com tecnologia LED pela CRP Luz em São José do Rio Preto"
+            >
+              <source src="assets/operacao_avenida.mp4?v=1080p" type="video/mp4" />
+            </video>
+            <div class="video-overlay-badge">
+              <span class="live-dot"></span>
+              Operação Noturna • São José do Rio Preto
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Métricas Oficiais do Smart Rio Preto -->
+      <div class="smart-stats-row">
+        <div class="smart-stat-card">
+          <div class="stat-number">309</div>
+          <div class="stat-title">Semáforos Modernizados</div>
+          <div class="stat-desc">40 novos equipamentos e 92 pontos renovados já no primeiro ano de execução.</div>
+        </div>
+
+        <div class="smart-stat-card">
+          <div class="stat-number">3.000</div>
+          <div class="stat-title">Câmeras com Inteligência Artificial</div>
+          <div class="stat-desc">Tecnologia OCR para leitura automática de placas, mapeamento facial e monitoramento estratégico.</div>
+        </div>
+
+        <div class="smart-stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-title">Iluminação Pública em LED</div>
+          <div class="stat-desc">Substituição das luminárias antigas com maior eficiência energética, claridade e segurança.</div>
+        </div>
+      </div>
+
+      <!-- Bloco: Utilize o Canal de Atendimento Para -->
+      <div class="atendimento-guide-box">
+        <h3 class="guide-title">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          UTILIZE O CANAL DE ATENDIMENTO PARA:
+        </h3>
+        
+        <div class="guide-grid">
+          <div class="guide-item">
+            <div class="guide-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+            </div>
+            <div class="guide-txt">
+              <strong>Luz apagada ou defeituosa:</strong>
+              <p>Acione o <a href="tel:08009214477">0800 921 4477</a> para solicitar a substituição da luminária, garantindo a manutenção da iluminação e da segurança no seu bairro.</p>
+            </div>
+          </div>
+
+          <div class="guide-item">
+            <div class="guide-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <div class="guide-txt">
+              <strong>Semáforos com problemas:</strong>
+              <p>Caso identifique falhas em semáforos, entre em contato pelo <a href="tel:08009214477">0800 921 4477</a> para solicitar o reparo imediato.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="comunicado-closure">
+          <p>
+            A CRP Luz permanece à disposição da comunidade para receber sugestões, esclarecer questionamentos e construir, em parceria com os cidadãos, um futuro mais seguro, conectado e eficiente para São José do Rio Preto (<a href="#operacao">confira fotos das operações e equipes da CRP Luz</a>).
+          </p>
+        </div>
+      </div>
+
     </div>
   </section>
 
