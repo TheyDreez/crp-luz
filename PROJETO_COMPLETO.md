@@ -453,11 +453,20 @@ a:focus-visible, button:focus-visible {
 .header-brand {
   display: flex;
   align-items: center;
+  opacity: 0;
+  transform: translateY(-4px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 .header-brand img {
-  height: 32px;
+  height: 30px;
   width: auto;
   display: block;
+}
+.site-header.scrolled .header-brand {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
 }
 
 .header-phone {
@@ -1603,14 +1612,18 @@ a:focus-visible, button:focus-visible {
       }
     }
 
-    // 2. HEADER: Transição de transparência sóbria ao rolar
+    // 2. HEADER: Revelar logo discreta apenas após rolar o hero
     const siteHeader = document.getElementById('siteHeader');
     if (siteHeader) {
-      window.addEventListener('scroll', function() {
-        siteHeader.style.backgroundColor = window.pageYOffset > 50 
+      const updateHeader = function() {
+        const scrolled = window.pageYOffset > 100;
+        siteHeader.classList.toggle('scrolled', scrolled);
+        siteHeader.style.backgroundColor = scrolled 
           ? 'rgba(6, 15, 30, 0.98)' 
           : 'rgba(6, 15, 30, 0.94)';
-      }, { passive: true });
+      };
+      window.addEventListener('scroll', updateHeader, { passive: true });
+      updateHeader();
     }
   })();
   </script>
