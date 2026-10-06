@@ -24,12 +24,12 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230B1B36'/%3E%3Ctext x='6' y='22' font-family='Arial' font-size='15' font-weight='800' fill='%235A9BE6'%3EC%3C/text%3E%3Ctext x='17' y='22' font-family='Arial' font-size='15' font-weight='800' fill='%237FE6DF'%3EL%3C/text%3E%3C/svg%3E" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
 
 <style>
 /* ==================================================
-   DESIGN TOKENS & FUNDAMENTOS TÉCNICOS
-   Equilíbrio: 40% Institucional | 25% Tecnologia | 20% Infraestrutura | 10% Editorial | 5% Microinterações
+   DESIGN TOKENS & ASSINATURA VISUAL DA MARCA
+   45% Institucional | 25% Tecnologia | 20% Infraestrutura | 10% Editorial
    ================================================== */
 :root {
   --blue-brand: #2D5698;
@@ -48,13 +48,14 @@
   --border-rule: rgba(255, 255, 255, 0.10);
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-dark-rule: #E2E8F0;
-  --tech-accent: rgba(127, 230, 223, 0.14);
+  --tech-accent: rgba(127, 230, 223, 0.16);
   --radius-sm: 4px;
   --radius-md: 6px;
   --header-h: 70px;
   --max-w: 1200px;
   --font-display: 'Sora', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
   --focus-ring: #7FE6DF;
 }
 
@@ -143,6 +144,16 @@ a:focus-visible, button:focus-visible {
 .comunicado-section,
 .operacao-section {
   scroll-margin-top: calc(var(--header-h) + 24px);
+}
+
+/* Identificadores do Sistema Gráfico (Numeração Editorial) */
+.section-idx {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--teal-bright);
+  margin-right: 6px;
 }
 
 /* ==================================================
@@ -363,7 +374,8 @@ a:focus-visible, button:focus-visible {
 }
 
 .att-kicker {
-  display: block;
+  display: flex;
+  align-items: center;
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.14em;
@@ -452,7 +464,8 @@ a:focus-visible, button:focus-visible {
 }
 
 .comunicado-badge {
-  display: inline-block;
+  display: flex;
+  align-items: center;
   font-size: 0.8125rem;
   font-weight: 800;
   letter-spacing: 0.12em;
@@ -565,13 +578,24 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==================================================
-   MÉTRICAS SMART RIO PRETO (GRID TIPOGRÁFICO SUÍÇO & DADOS URBANOS)
+   MÉTRICAS SMART RIO PRETO (ASSINATURA TECNOLÓGICA DE DADOS URBANOS)
    ================================================== */
 .smart-stats-strip {
   border-top: 1px solid var(--border-rule);
   border-bottom: 1px solid var(--border-rule);
-  padding: 52px 0;
+  padding: 48px 0;
   margin-bottom: 64px;
+}
+
+.smart-stats-meta-bar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: var(--ink-light);
+  text-transform: uppercase;
 }
 
 .smart-stats-grid {
@@ -598,13 +622,33 @@ a:focus-visible, button:focus-visible {
   }
 }
 
+.stat-idx-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--teal-bright);
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.stat-idx-label::after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  width: 24px;
+  background-color: var(--tech-accent);
+}
+
 .stat-number {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 4.4vw, 3.8rem);
   font-weight: 800;
   color: #FFFFFF;
   line-height: 1;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   font-variant-numeric: tabular-nums;
   margin-bottom: 12px;
 }
@@ -625,7 +669,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==================================================
-   GUIA DE ATENDIMENTO (Estrutura Editorial Integrada)
+   GUIA DE ATENDIMENTO (Fluxo Operacional Integrado)
    ================================================== */
 .atendimento-guide-flow {
   padding-top: 12px;
@@ -667,25 +711,18 @@ a:focus-visible, button:focus-visible {
 
 .guide-cell {
   display: flex;
-  gap: 18px;
+  gap: 16px;
   align-items: flex-start;
+  border-left: 2px solid var(--teal-bright);
+  padding-left: 18px;
 }
 
-.guide-icon-pill {
-  width: 36px;
-  height: 36px;
-  flex-shrink: 0;
-  border-radius: var(--radius-sm);
-  background: rgba(127, 230, 223, 0.08);
-  border: 1px solid rgba(127, 230, 223, 0.22);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--teal-bright);
-}
-.guide-icon-pill svg {
+.guide-icon-subtle {
   width: 18px;
   height: 18px;
+  color: var(--teal-bright);
+  flex-shrink: 0;
+  margin-top: 3px;
 }
 
 .guide-body strong {
@@ -721,7 +758,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==================================================
-   GALERIA / OPERAÇÃO EM CAMPO (CADERNO DE ENGENHARIA)
+   GALERIA / OPERAÇÃO EM CAMPO (CADERNO EDITORIAL ASSIMÉTRICO)
    ================================================== */
 .operacao-section {
   position: relative;
@@ -749,12 +786,17 @@ a:focus-visible, button:focus-visible {
 }
 
 .operacao-kicker {
+  display: flex;
+  align-items: center;
   font-size: 0.8125rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--teal-primary);
   margin-bottom: 8px;
+}
+.operacao-kicker .section-idx {
+  color: var(--teal-primary);
 }
 
 .operacao-title {
@@ -779,24 +821,12 @@ a:focus-visible, button:focus-visible {
   color: var(--teal-primary);
 }
 
+/* Grade Editorial Assimétrica: 1 Imagem Dominante + Secundárias + Complementar */
 .editorial-gallery-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1.25fr 1fr 1fr;
+  grid-template-rows: 275px 275px;
   gap: 20px;
-}
-
-@media (max-width: 992px) {
-  .editorial-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-  }
-}
-
-@media (max-width: 580px) {
-  .editorial-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
 }
 
 .editorial-item {
@@ -805,12 +835,68 @@ a:focus-visible, button:focus-visible {
   overflow: hidden;
   background-color: var(--navy-dark);
   border: 1px solid var(--border-dark-rule);
-  aspect-ratio: 9 / 14;
+}
+
+.gallery-dominant {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+}
+
+.gallery-sub-1 {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.gallery-sub-2 {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.gallery-complementary {
+  grid-column: 2 / 4;
+  grid-row: 2 / 3;
+}
+
+@media (max-width: 992px) {
+  .editorial-gallery-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 16px;
+  }
+  .gallery-dominant {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    height: 380px;
+  }
+  .gallery-sub-1 {
+    grid-column: 1 / 2;
+    grid-row: auto;
+    height: 250px;
+  }
+  .gallery-sub-2 {
+    grid-column: 2 / 3;
+    grid-row: auto;
+    height: 250px;
+  }
+  .gallery-complementary {
+    grid-column: 1 / 3;
+    grid-row: auto;
+    height: 280px;
+  }
 }
 
 @media (max-width: 580px) {
-  .editorial-item {
-    aspect-ratio: 4 / 3;
+  .editorial-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+  .gallery-dominant,
+  .gallery-sub-1,
+  .gallery-sub-2,
+  .gallery-complementary {
+    grid-column: 1 / 2;
+    height: 260px;
   }
 }
 
@@ -985,7 +1071,7 @@ a:focus-visible, button:focus-visible {
         <div class="atendimento-panel">
           
           <div class="att-info">
-            <span class="att-kicker">ATENDIMENTO</span>
+            <span class="att-kicker"><span class="section-idx">01 //</span> ATENDIMENTO</span>
             <h2 class="att-title">Precisa falar com a CRP Luz?</h2>
             <div class="att-phone-box">
               <a class="att-phone-num" href="tel:08009214477" aria-label="Ligar para o número 0800 921 4477">
@@ -997,7 +1083,7 @@ a:focus-visible, button:focus-visible {
           <div class="att-action">
             <a class="att-cta-btn" href="tel:08009214477" aria-label="Ligar para a CRP Luz">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1L6.6 10.8Z"/>
+                <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1L6.6 10.8Z"/>
               </svg>
               <span>Ligar para a CRP Luz</span>
             </a>
@@ -1014,7 +1100,7 @@ a:focus-visible, button:focus-visible {
       <div class="wrap">
         
         <div class="comunicado-header">
-          <span class="comunicado-badge">Comunicado Oficial • Smart Rio Preto</span>
+          <span class="comunicado-badge"><span class="section-idx">02 //</span> Comunicado Oficial • Smart Rio Preto</span>
           <h2 class="comunicado-title">CRP Luz reforça compromisso com São José do Rio Preto e disponibiliza 0800 exclusivo</h2>
           <p class="comunicado-dateline">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
@@ -1060,22 +1146,29 @@ a:focus-visible, button:focus-visible {
           </div>
         </div>
 
-        <!-- Faixa de Métricas Smart Rio Preto (Grid Tipográfico Suíço & Dados Urbanos) -->
+        <!-- Faixa de Métricas Smart Rio Preto (Assinatura Tecnológica de Dados Urbanos) -->
         <div class="smart-stats-strip">
+          <div class="smart-stats-meta-bar">
+            <span class="section-idx">03 //</span> SISTEMA SMART RIO PRETO — INFRAESTRUTURA &amp; METAS
+          </div>
+
           <div class="smart-stats-grid">
             <div class="smart-stat-col">
+              <div class="stat-idx-label">01 / INFRAESTRUTURA VIÁRIA</div>
               <div class="stat-number">309</div>
               <div class="stat-title">Semáforos Modernizados</div>
               <div class="stat-desc">40 novos equipamentos e 92 pontos renovados já no primeiro ano de execução.</div>
             </div>
 
             <div class="smart-stat-col">
+              <div class="stat-idx-label">02 / MONITORAMENTO URBANO</div>
               <div class="stat-number">3.000</div>
               <div class="stat-title">Câmeras com Inteligência Artificial</div>
               <div class="stat-desc">Tecnologia OCR para leitura automática de placas, mapeamento facial e monitoramento estratégico.</div>
             </div>
 
             <div class="smart-stat-col">
+              <div class="stat-idx-label">03 / EFICIÊNCIA ENERGÉTICA</div>
               <div class="stat-number">100%</div>
               <div class="stat-title">Iluminação Pública em LED</div>
               <div class="stat-desc">Substituição das luminárias antigas com maior eficiência energética, claridade e segurança.</div>
@@ -1083,7 +1176,7 @@ a:focus-visible, button:focus-visible {
           </div>
         </div>
 
-        <!-- Bloco: Utilize o Canal de Atendimento Para (Fluxo Editorial Integrado) -->
+        <!-- Bloco: Utilize o Canal de Atendimento Para (Fluxo Operacional Integrado) -->
         <div class="atendimento-guide-flow">
           <h3 class="guide-heading">
             <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
@@ -1092,9 +1185,7 @@ a:focus-visible, button:focus-visible {
           
           <div class="guide-columns">
             <div class="guide-cell">
-              <div class="guide-icon-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
-              </div>
+              <svg class="guide-icon-subtle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
               <div class="guide-body">
                 <strong>Luz apagada ou defeituosa:</strong>
                 <p>Acione o <a href="tel:08009214477">0800 921 4477</a> para solicitar a substituição da luminária, garantindo a manutenção da iluminação e da segurança no seu bairro.</p>
@@ -1102,9 +1193,7 @@ a:focus-visible, button:focus-visible {
             </div>
 
             <div class="guide-cell">
-              <div class="guide-icon-pill">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              </div>
+              <svg class="guide-icon-subtle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
               <div class="guide-body">
                 <strong>Semáforos com problemas:</strong>
                 <p>Caso identifique falhas em semáforos, entre em contato pelo <a href="tel:08009214477">0800 921 4477</a> para solicitar o reparo imediato.</p>
@@ -1123,13 +1212,13 @@ a:focus-visible, button:focus-visible {
     </section>
 
     <!-- ==================================================
-         CADERNO DE ENGENHARIA: OPERAÇÃO EM CAMPO
+         CADERNO DE ENGENHARIA: OPERAÇÃO EM CAMPO (ASSIMÉTRICO)
          ================================================== -->
     <section class="operacao-section" id="operacao" aria-label="Fotografias da operação real da CRP Luz">
       <div class="wrap">
         <div class="operacao-head">
           <div>
-            <p class="operacao-kicker">Infraestrutura em Campo</p>
+            <p class="operacao-kicker"><span class="section-idx">04 //</span> Infraestrutura em Campo</p>
             <h2 class="operacao-title">Operação em São José do Rio Preto</h2>
           </div>
           <span class="operacao-loc">
@@ -1143,8 +1232,8 @@ a:focus-visible, button:focus-visible {
 
         <div class="editorial-gallery-grid">
           
-          <!-- Foto 1: Avenida iluminada -->
-          <article class="editorial-item">
+          <!-- Foto 1 (Dominante): Avenida iluminada em grande escala -->
+          <article class="editorial-item gallery-dominant">
             <img src="assets/slide-1.jpg" alt="Avenida de São José do Rio Preto com iluminação pública em pleno funcionamento" />
             <span class="editorial-item-label">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3v18"/></svg>
@@ -1152,8 +1241,8 @@ a:focus-visible, button:focus-visible {
             </span>
           </article>
 
-          <!-- Foto 2: Equipe técnica no cesto aéreo -->
-          <article class="editorial-item">
+          <!-- Foto 2 (Secundária 1): Equipe técnica no cesto aéreo -->
+          <article class="editorial-item gallery-sub-1">
             <img src="assets/slide-4.jpg" alt="Equipe técnica da CRP Luz realizando manutenção noturna com cesto aéreo" />
             <span class="editorial-item-label">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
@@ -1161,8 +1250,8 @@ a:focus-visible, button:focus-visible {
             </span>
           </article>
 
-          <!-- Foto 3: Caminhão da frota -->
-          <article class="editorial-item">
+          <!-- Foto 3 (Secundária 2): Caminhão da frota operacional -->
+          <article class="editorial-item gallery-sub-2">
             <img src="assets/slide-2.jpg" alt="Caminhão da frota operacional da CRP Luz equipado para serviços em altura" />
             <span class="editorial-item-label">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
@@ -1170,8 +1259,8 @@ a:focus-visible, button:focus-visible {
             </span>
           </article>
 
-          <!-- Foto 4: Corredor urbano com postes estilizados -->
-          <article class="editorial-item">
+          <!-- Foto 4 (Complementar): Corredor urbano com postes estilizados -->
+          <article class="editorial-item gallery-complementary">
             <img src="assets/slide-3.jpg" alt="Corredor viário arborizado com iluminação pública da CRP Luz em São José do Rio Preto" />
             <span class="editorial-item-label">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21s-7-4.4-7-10a7 7 0 0 1 14 0c0 5.6-7 10-7 10Z"/></svg>
