@@ -28,7 +28,8 @@
 
 <style>
 /* ==================================================
-   DESIGN TOKENS & FUNDAMENTOS (SWISS & GOV DESIGN SYSTEM)
+   DESIGN TOKENS & FUNDAMENTOS TÉCNICOS
+   Equilíbrio: 40% Institucional | 25% Tecnologia | 20% Infraestrutura | 10% Editorial | 5% Microinterações
    ================================================== */
 :root {
   --blue-brand: #2D5698;
@@ -47,6 +48,7 @@
   --border-rule: rgba(255, 255, 255, 0.10);
   --border-subtle: rgba(255, 255, 255, 0.06);
   --border-dark-rule: #E2E8F0;
+  --tech-accent: rgba(127, 230, 223, 0.14);
   --radius-sm: 4px;
   --radius-md: 6px;
   --header-h: 70px;
@@ -136,7 +138,7 @@ a:focus-visible, button:focus-visible {
   }
 }
 
-/* Scroll margin para alinhamento perfeito de âncoras sob header fixo */
+/* Scroll margin para âncoras sob header fixo */
 .atendimento-section,
 .comunicado-section,
 .operacao-section {
@@ -144,7 +146,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==================================================
-   HEADER (Institucional Arquitetônico)
+   HEADER (Institucional Arquitetônico & Tecnológico)
    ================================================== */
 .site-header {
   position: fixed;
@@ -331,7 +333,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==================================================
-   BLOCO 0800 / ATENDIMENTO (Callout Inset Sólido - GOV.UK style)
+   BLOCO 0800 / ATENDIMENTO (Terminal Operacional Inset)
    ================================================== */
 .atendimento-section {
   position: relative;
@@ -390,6 +392,7 @@ a:focus-visible, button:focus-visible {
   color: #FFFFFF;
   line-height: 1.05;
   display: inline-block;
+  font-variant-numeric: tabular-nums;
   transition: color 0.2s ease;
 }
 .att-phone-num:hover {
@@ -562,7 +565,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==================================================
-   MÉTRICAS SMART RIO PRETO (GRID TIPOGRÁFICO SUÍÇO)
+   MÉTRICAS SMART RIO PRETO (GRID TIPOGRÁFICO SUÍÇO & DADOS URBANOS)
    ================================================== */
 .smart-stats-strip {
   border-top: 1px solid var(--border-rule);
@@ -602,6 +605,7 @@ a:focus-visible, button:focus-visible {
   color: #FFFFFF;
   line-height: 1;
   letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
   margin-bottom: 12px;
 }
 
@@ -717,7 +721,7 @@ a:focus-visible, button:focus-visible {
 }
 
 /* ==================================================
-   GALERIA / OPERAÇÃO EM CAMPO (CADERNO EDITORIAL)
+   GALERIA / OPERAÇÃO EM CAMPO (CADERNO DE ENGENHARIA)
    ================================================== */
 .operacao-section {
   position: relative;
@@ -910,7 +914,7 @@ a:focus-visible, button:focus-visible {
   <a class="skip-link" href="#atendimento">Pular para o atendimento</a>
 
   <!-- ==================================================
-       HEADER (Institucional Arquitetônico)
+       HEADER (Institucional Arquitetônico & Tecnológico)
        ================================================== -->
   <header class="site-header" id="siteHeader">
     <div class="wrap">
@@ -993,7 +997,7 @@ a:focus-visible, button:focus-visible {
           <div class="att-action">
             <a class="att-cta-btn" href="tel:08009214477" aria-label="Ligar para a CRP Luz">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1L6.6 10.8Z"/>
+                <path d="M6.6 10.8a15 15 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24 11.4 11.4 0 0 0 3.6.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1 1c0 1.25.2 2.46.58 3.6a1 1 0 0 1-.25 1L6.6 10.8Z"/>
               </svg>
               <span>Ligar para a CRP Luz</span>
             </a>
@@ -1056,7 +1060,7 @@ a:focus-visible, button:focus-visible {
           </div>
         </div>
 
-        <!-- Faixa de Métricas Smart Rio Preto (Grid Tipográfico Suíço) -->
+        <!-- Faixa de Métricas Smart Rio Preto (Grid Tipográfico Suíço & Dados Urbanos) -->
         <div class="smart-stats-strip">
           <div class="smart-stats-grid">
             <div class="smart-stat-col">
@@ -1119,7 +1123,7 @@ a:focus-visible, button:focus-visible {
     </section>
 
     <!-- ==================================================
-         CADERNO EDITORIAL: OPERAÇÃO EM CAMPO
+         CADERNO DE ENGENHARIA: OPERAÇÃO EM CAMPO
          ================================================== -->
     <section class="operacao-section" id="operacao" aria-label="Fotografias da operação real da CRP Luz">
       <div class="wrap">
@@ -1161,7 +1165,7 @@ a:focus-visible, button:focus-visible {
           <article class="editorial-item">
             <img src="assets/slide-2.jpg" alt="Caminhão da frota operacional da CRP Luz equipado para serviços em altura" />
             <span class="editorial-item-label">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
               Frota de serviço
             </span>
           </article>
