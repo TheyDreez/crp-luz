@@ -289,13 +289,43 @@ a:focus-visible, button:focus-visible {
 }
 
 .hero-brand-title {
+  position: relative;
+  display: inline-block;
   margin-bottom: 24px;
+  line-height: 1;
 }
+
+/* Luz de fundo atmosférica (Aura suave de iluminação urbana) */
+.hero-brand-title::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 170%;
+  height: 220%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(127, 230, 223, 0.32) 0%,
+    rgba(45, 86, 152, 0.24) 45%,
+    rgba(6, 15, 30, 0) 75%
+  );
+  filter: blur(28px);
+  pointer-events: none;
+  z-index: 0;
+}
+
 .hero-brand-logo {
+  position: relative;
+  z-index: 1;
   height: 64px;
   width: auto;
   max-width: 100%;
   display: block;
+  filter:
+    drop-shadow(0 0 24px rgba(127, 230, 223, 0.28))
+    drop-shadow(0 4px 18px rgba(0, 0, 0, 0.65));
 }
 
 @media (max-width: 640px) {
